@@ -14,7 +14,9 @@ var app = express();
 // set up Express Router
 var router = express.Router();
 
-// require("./config/routes")(router);
+
+// require routes
+require("./config/routes")(router);
 
 
 // designate our public folder as a static directory
