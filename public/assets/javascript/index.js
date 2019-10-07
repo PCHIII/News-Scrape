@@ -2,7 +2,7 @@ $(document).ready(function() {
 // scrape new btn, create container for articles
     var articleContainer = $(".article-container");
     $(document).on("click", ".btn.save", handleArticleSave);
-    $(document).on("click", ".scrape-new", handleArticleSave);
+    $(document).on("click", ".scrape-new", handleArticleScrape);
 
     initPage();
 
@@ -34,8 +34,8 @@ $(document).ready(function() {
     function createPanel(article) {
 
         var panel =
-        $(["<div class = 'panel panel-default'>",
-        "<div class='panel-heading'>",
+        $(["<div class = 'card'>",
+        "<div class='card-header'>",
         "<h3>",
         article.headline,
         "<a class='btn btn-success save'>",
@@ -43,7 +43,7 @@ $(document).ready(function() {
         "</a>",
         "</h3>",
         "</div>",
-        "<div class='panel-body'>",
+        "<div class='card-block'>",
         article.summary,
         "</div>",
         "</div>"
@@ -58,26 +58,24 @@ $(document).ready(function() {
     function renderEmpty() {
          var emptyAlert =
          $(["<div class='alert alert-warning text-center'>",
-        "<h4>No new articles at this time.</h4>",
+        "<h4>No new articles currently available.</h4>",
         "</div>",
-        "<div class='panel panel-default'>",
-        "<div class='panel-heading text-center'>",
+        "<div class='card'>",
+        "<div class='card-header text-center'>",
         "<h3> What would you like to do?</h3>",
         "</div>",
-        "<div class='panel-body text-center'>",
+        "<div class='card-block text-center'>",
         "<h4><a class='scrape-new'>Scrape New Articles</a></h4>",
         "<h4><a href='/saved'>Go to Saved Articles</a></h4>",
         "</div>",
         "</div>"
-
-
         ].join(""));
         articleContainer.append(emptyAlert);
     }
 
     function handleArticleSave () {
 
-        var articleToSave = $(this).parents(".panel").data();
+        var articleToSave = $(this).parents(".card").data();
         articleToSave.saved = true;
 
         $.ajax({
@@ -98,7 +96,7 @@ $(document).ready(function() {
         $.get("/api/fetch")
         .then(function(data) {
             initPage();
-            bootbox.alert("h3 class='text-center m-top-80'>" + data.message + "</h3>");
+            bootbox.alert("<h3 class='text-center m-top-80'>" + data.message + "<h3>");
         });
     }
 });

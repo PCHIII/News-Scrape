@@ -1,19 +1,36 @@
-var mongoose = require("mongoose");
 
-var Schema = mongoose.Schema;
+// create a new note document
 
-var noteSchema = new Schema({
-    _headlineID: {
-        type: Schema.Types.ObjectId,
-        ref: "HeadLine"
+var Note = require("../models/Note");
+var makeDate = require("../scripts/date");
+
+module.exports = {
+    get:function(data, cb) {
+        Note.find({
+            _headlineId: data._id
+        }, cb);
     },
-    
-    date: String,
-    noteText: String
-    
+    save:function(data, cb) {
+        var newNote = {
+            _headlineId: data._id,
+            date: makeData(),
+            noteText: data.noteText
+        };
 
-});
+        Note.create(newNote, function (err, doc) {
+            if (err) {
+                console.log(err);
+            }
+            else {
+                console.log(doc);
+                cb(doc);
+            }
+        });
+    },
+    delete: function (data, cb) {
+        Note.remove({
+            _id: data._id
+        }, cb);
 
-var Note = mongoose.model("Note" , noteSchema);
-
-module.exports = Note;
+    }
+};
