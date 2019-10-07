@@ -31,12 +31,12 @@ module.exports = {
         .sort({
             _id: -1
         })
-        .exec(function(err,doc) {
+        .exec(function(err, doc) {
             cb(doc);
 
         });
     },
-    update: function(query,cb) {
+    update: function(query, cb) {
         Headline.update({_id: query._id}, {
             $set: query
         }, {}, cb);
