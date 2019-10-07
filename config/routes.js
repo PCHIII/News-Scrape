@@ -44,11 +44,41 @@ router.get("/api/headlines", function(req, res) {
 
     });
   });
-
+// delete headlines
 router.delete("/api/headlines/:id", function(req, res) {
     var query = {};
     query._id = req.params.id;
     headlinesController.delete(query, function(err, data) {
+        res.json(data);
+    });
+   });
+// patch to update the headlines
+router.patch("/api/headlines", function(req, res) {
+    headlinesController.update(req.body, function(err, data) {
+        res.json(data);
+    });
+});
+
+router.get("/api/notes/:headline_id", function(req, res) {
+    var query = {};
+    if (req.params.headline_id) {
+        query._id = req.params.headline_id;
+    }
+    notesController.get(query, function(err, data) {
+        res.json(data);
+    });
+   });
+
+router.delete("/api/notes/:id", function(req, res) {
+    var query = {};
+    query._id = req.params.id;
+    notesController.delete(query, function(err, data) {
+        res.json(data);
+    });
+   });
+//    post new notes to articles
+router.post("/api/notes", function(req, res) {
+    notesController.save(req.body, function(data) {
         res.json(data);
     });
    });
