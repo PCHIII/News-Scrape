@@ -16,9 +16,9 @@ var scrape = function() {
           .text()
           .trim();
   
-        // var url = $(this)
-        //   .find("a")
-        //   .attr("href");
+        var url = $(this)
+        .find("a")
+        .attr("href");
   
         var sum = $(this)
           .find("p")
@@ -52,7 +52,8 @@ var scrape = function() {
 
                 var dataToAdd = {
                     headLine: headNeat,
-                    summary: sumNeat
+                    summary: sumNeat,
+                    url
                 };
 console.log(dataToAdd)
                 articles.push(dataToAdd);
