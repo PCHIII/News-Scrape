@@ -26,34 +26,37 @@ $(document).ready(function() {
         var articlePanels = [];
 
         for (var i = 0; i < articles.length; i++) {
-            articlePanels.push(createPanel(articles[i]));
+            articlePanels.push(createCard(articles[i]));
 
         }
         articleContainer.append(articlePanels);
 }
-    function createPanel(article) {
+    function createCard(article) {
 
-        var panel = $(
+        var card = $(
         [
-        "<div class = 'panel panel-default'>",
-        "<div class='panel-heading'>",
-        "<h3>",
+        "<div class = 'card bg-dark text-white mb-3'>",
+        "<div class='card-header'>",
+        "<h4>",
         article.headline,
-        "<a class='btn btn-danger delete'>",
-        "Delete Saved Article",
-        "</a>",
-        "<a class='btn btn-info notes'>Article Notes</a>",
-        "</h3>",
+        
+        "</h4>",
         "</div>",
-        "<div class='panel-body'>",
+        "<div class='card-body bg-light text-dark'>",
         article.summary,
         "</div>",
+        "<div class ='card-text bg-light text-dark pb-2 pl-2'>",
+        "<a class='btn btn-danger delete mr-2'>",
+        "Delete Article</a>",
+        "<a class='btn btn-info notes '>Add Notes</a>",
+        "</div>",
+
         "</div>"
         ].join(""));
 
-        panel.data("_id", article._id);
+        card.data("_id", article._id);
 
-        return panel;
+        return card;
 
     }
 
@@ -63,11 +66,11 @@ $(document).ready(function() {
         "<div class='alert alert-warning text-center'>",
         "<h4>No saved articles currently available.</h4>",
         "</div>",
-        "<div class='panel panel-default'>",
-        "<div class='panel-heading text-center'>",
+        "<div class='card'>",
+        "<div class='card-header text-center text-danger'>",
         "<h3> Do you want to check available articles?</h3>",
         "</div>",
-        "<div class='panel-body text-center'>",
+        "<div class='card-body text-center'>",
         
         "<h4><a href='/'>Check Articles</a></h4>",
         "</div>",
@@ -109,7 +112,7 @@ $(document).ready(function() {
     }
 
 function handleArticleDelete() {
-    var articleToDelete = $(this).parents(".panel").data();
+    var articleToDelete = $(this).parents(".card").data();
     $.ajax({
         method: "DELETE",
         url: "/api/headlines/" + articleToDelete._id
@@ -124,20 +127,20 @@ function handleArticleDelete() {
 
     function handleArticleNotes() {
 
-        var currentArticle = $(this).parents(".panel").data();
+        var currentArticle = $(this).parents(".card").data();
 
         $.get("/api/notes/" + currentArticle._id).then(function(data) {
 
             var modalText = [
-                "div class='container-fluid text-center'>",
-                "<h4>Notes for Article: ",
+                "<div class='card border-0 pl-3'>",
+                "<h5>Notes for Article: ",
                 currentArticle._id,
-                "</h4>",
-                "hr />",
-                "ul class='list-group note-container'>",
+                "</h5>",
+                "<hr />",
+                "<ul class='list-group note-container mb-3'>",
                 "</ul>",
-                "<textarea placeholder='New Note' rows='4' cols='60'></textarea>",
-                "<button class='btn btn-success save'>Save Note</button>",
+                "<textarea placeholder='New Note'  rows='10' cols='60'></textarea>",
+                "<button class='btn btn-success save ml-auto mt-2'>Save Note</button>",
                 "</div>"
             ].join("");
             bootbox.dialog({

@@ -22,37 +22,39 @@ $(document).ready(function() {
     }
 
     function renderArticles(articles) {
-
         var articlePanels = [];
-
         for (var i = 0; i < articles.length; i++) {
-            articlePanels.push(createPanel(article[i]));
-
+            articlePanels.push(createCard(articles[i]));
         }
         articleContainer.append(articlePanels);
     }
-    function createPanel(article) {
+    function createCard(article) {
 
-        var panel = $(
+        var card = $(
         [
-        "<div class = 'panel panel-default'>",
-        "<div class='panel-heading'>",
-        "<h3>",
+        "<div class = 'card bg-dark text-white mb-3'>",
+        "<div class='card-header'>",
+        "<h4>",
         article.headline,
-        "<a class='btn btn-success save'>",
+        
+        "</h4>",
+        "</div>",
+        "<div class='card-body bg-light text-dark'>",
+        article.summary,
+         article.url,
+       "</div>",
+        "<div class ='card-text bg-light pb-2 pl-2'>",
+        "<a class='btn btn-info border-dark save'>",
         "Save Article",
         "</a>",
-        "</h3>",
-        "</div>",
-        "<div class='panel-body'>",
-        article.summary,
+       
         "</div>",
         "</div>"
         ].join(""));
 
-        panel.data("_id", article._id);
+        card.data("_id", article._id);
 
-        return panel;
+        return card;
 
     }
 
@@ -60,13 +62,13 @@ $(document).ready(function() {
          var emptyAlert = $(
         [
         "<div class='alert alert-warning text-center'>",
-        "<h4>No new articles currently available.</h4>",
+        "<h5>No new articles currently available.</h5>",
         "</div>",
-        "<div class='panel panel-default'>",
-        "<div class='panel-heading text-center'>",
-        "<h3> What would you like to do?</h3>",
+        "<div class='card'>",
+        "<div class='card-header text-center text-dark'>",
+        "<h5> What would you like to do?</h5>",
         "</div>",
-        "<div class='panel-body text-center'>",
+        "<div class='card-body text-center'>",
         "<h4><a class='scrape-new'>Scrape New Articles</a></h4>",
         "<h4><a href='/saved'>Go to Saved Articles</a></h4>",
         "</div>",
@@ -77,11 +79,11 @@ $(document).ready(function() {
 
     function handleArticleSave () {
 
-        var articleToSave = $(this).parents(".panel").data();
+        var articleToSave = $(this).parents(".card").data();
         articleToSave.saved = true;
 
         $.ajax({
-            method: "PUT",
+            method: "PATCH",
             url: "/api/headlines",
             data: articleToSave
         })

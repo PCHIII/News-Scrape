@@ -43,5 +43,5 @@ module.exports = {
             $set: query
         }, {}, cb);
 
-        }
     }
+}

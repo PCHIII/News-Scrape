@@ -2,7 +2,7 @@
 // server routes
 // bring in scrap function from script directory
 
-// var scrape = require("../scripts/scrape");
+var scrape = require("../scripts/scrape");
 
 // bring in headlines and notes from controller
 var headlinesController = require("../controllers/headlines");
@@ -36,10 +36,10 @@ module.exports = function(router) {
   });
 //   grad the headlines in the database
 router.get("/api/headlines", function(req, res) {
-    // var query = {};
-    // if (req.query.saved) {
-    //     query = req.query;
-    // }
+    var query = {};
+    if (req.query.saved) {
+      query = req.query;
+    }
     headlinesController.get(req.query, function(data) {
         res.json(data);
 
@@ -47,44 +47,32 @@ router.get("/api/headlines", function(req, res) {
   });
 // delete headlines
 router.delete("/api/headlines/:id", function(req, res) {
-    // var query = {};
-    var query = { _id: req.params.id };
+    var query = {};
+    query._id = req.params.id;
     headlinesController.delete(query, function(err, data) {
         res.json(data);
     });
    });
 // patch to update the headlines
-router.put("/api/headlines", function(req, res) {
+router.patch("/api/headlines", function(req, res) {
     headlinesController.update(req.body, function(err, data) {
         res.json(data);
     });
 });
 
-// This route handles getting notes for a particular headline id
-router.get("/api/notes/", function(req, res) {
-    // Get all notes
-    notesController.get({}, function(err, data) {
-      // Send the note data back to the user as JSON
-      res.json(data);
-    });
-  });
-
-router.get("/api/notes/:headline_id", function(req, res) {
-
-    var query = { _id: req.params.headline_id };
-    // var query = {};
-    // if (req.params.headline_id) {
-    //     query._id = req.params.headline_id;
-    // }
+router.get("/api/notes/:headline_id?", function(req, res) {
+    var query = {};
+    if (req.params.headline_id) {
+        query._id = req.params.headline_id;
+    }
     notesController.get(query, function(err, data) {
         res.json(data);
     });
    });
 
 router.delete("/api/notes/:id", function(req, res) {
-    var query = { _id: req.params.id };
-    // var query = {};
-    // query._id = req.params.id;
+    var query = {};
+    query._id = req.params.id;
     notesController.delete(query, function(err, data) {
         res.json(data);
     });
@@ -96,3 +84,4 @@ router.post("/api/notes", function(req, res) {
     });
    });
 };
+
