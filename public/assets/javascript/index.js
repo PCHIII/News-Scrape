@@ -32,7 +32,7 @@ $(document).ready(function() {
 
         var card = $(
         [
-        "<div class = 'card bg-dark text-white mb-3'>",
+        "<div class = 'card bg-secondary text-white shadow mb-4'>",
         "<div class='card-header'>",
         "<h4>",
         article.headline,
@@ -41,7 +41,8 @@ $(document).ready(function() {
         "</div>",
         "<div class='card-body bg-light text-dark'>",
         article.summary,
-         article.url,
+         "</br>",
+        article.url,
        "</div>",
         "<div class ='card-text bg-light pb-2 pl-2'>",
         "<a class='btn btn-info border-dark save'>",
