@@ -33,9 +33,10 @@ $(document).ready(function() {
     }
     function createPanel(article) {
 
-        var panel =
-        $(["<div class = 'card'>",
-        "<div class='card-header'>",
+        var panel = $(
+        [
+        "<div class = 'panel panel-default'>",
+        "<div class='panel-heading'>",
         "<h3>",
         article.headline,
         "<a class='btn btn-success save'>",
@@ -43,7 +44,7 @@ $(document).ready(function() {
         "</a>",
         "</h3>",
         "</div>",
-        "<div class='card-block'>",
+        "<div class='panel-body'>",
         article.summary,
         "</div>",
         "</div>"
@@ -56,15 +57,16 @@ $(document).ready(function() {
     }
 
     function renderEmpty() {
-         var emptyAlert =
-         $(["<div class='alert alert-warning text-center'>",
+         var emptyAlert = $(
+        [
+        "<div class='alert alert-warning text-center'>",
         "<h4>No new articles currently available.</h4>",
         "</div>",
-        "<div class='card'>",
-        "<div class='card-header text-center'>",
+        "<div class='panel panel-default'>",
+        "<div class='panel-heading text-center'>",
         "<h3> What would you like to do?</h3>",
         "</div>",
-        "<div class='card-block text-center'>",
+        "<div class='panel-body text-center'>",
         "<h4><a class='scrape-new'>Scrape New Articles</a></h4>",
         "<h4><a href='/saved'>Go to Saved Articles</a></h4>",
         "</div>",
@@ -75,11 +77,11 @@ $(document).ready(function() {
 
     function handleArticleSave () {
 
-        var articleToSave = $(this).parents(".card").data();
+        var articleToSave = $(this).parents(".panel").data();
         articleToSave.saved = true;
 
         $.ajax({
-            method: "PATCH",
+            method: "PUT",
             url: "/api/headlines",
             data: articleToSave
         })

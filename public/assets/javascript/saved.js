@@ -33,17 +33,19 @@ $(document).ready(function() {
 }
     function createPanel(article) {
 
-        var panel =
-        $(["<div class = 'card'>",
-        "<div class='card-header'>",
+        var panel = $(
+        [
+        "<div class = 'panel panel-default'>",
+        "<div class='panel-heading'>",
         "<h3>",
         article.headline,
         "<a class='btn btn-danger delete'>",
         "Delete Saved Article",
         "</a>",
+        "<a class='btn btn-info notes'>Article Notes</a>",
         "</h3>",
         "</div>",
-        "<div class='card-block'>",
+        "<div class='panel-body'>",
         article.summary,
         "</div>",
         "</div>"
@@ -56,15 +58,16 @@ $(document).ready(function() {
     }
 
     function renderEmpty() {
-        var emptyAlert =
-         $(["<div class='alert alert-warning text-center'>",
+        var emptyAlert = $(
+        [
+        "<div class='alert alert-warning text-center'>",
         "<h4>No saved articles currently available.</h4>",
         "</div>",
-        "<div class='card'>",
-        "<div class='card-header text-center'>",
+        "<div class='panel panel-default'>",
+        "<div class='panel-heading text-center'>",
         "<h3> Do you want to check available articles?</h3>",
         "</div>",
-        "<div class='card-block text-center'>",
+        "<div class='panel-body text-center'>",
         
         "<h4><a href='/'>Check Articles</a></h4>",
         "</div>",
@@ -91,7 +94,8 @@ $(document).ready(function() {
         else {
             for (var i = 0; i < data.notes.length; i++) {
 
-                currentNote = $([
+                currentNote = $(
+                    [
                     "<li class='list-group-item note'>",
                     data.notes[i].noteText,
                     "<button class='btn btn-danger note-delete'>x</button>",
@@ -105,7 +109,7 @@ $(document).ready(function() {
     }
 
 function handleArticleDelete() {
-    var articleToDelete = $(this).parents(".card").data();
+    var articleToDelete = $(this).parents(".panel").data();
     $.ajax({
         method: "DELETE",
         url: "/api/headlines/" + articleToDelete._id
@@ -120,7 +124,7 @@ function handleArticleDelete() {
 
     function handleArticleNotes() {
 
-        var currentArticle = $(this).parents(".card").data();
+        var currentArticle = $(this).parents(".panel").data();
 
         $.get("/api/notes/" + currentArticle._id).then(function(data) {
 
