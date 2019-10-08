@@ -133,7 +133,7 @@ function handleArticleDelete() {
 
         $.get("/api/notes/" + currentArticle._id).then(function(data) {
 
-            var modalText = [
+            var modalText =  [
                 "<div class='card border-0 pl-3'>",
                 "<h5>Notes for Article: ",
                 currentArticle._id,
@@ -173,6 +173,8 @@ function handleArticleDelete() {
             };
             $.post("/api/notes", noteData).then(function() {
                 bootbox.hideAll();
+
+                // console.log(newNote)
             });
         }
     }
