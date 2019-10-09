@@ -38,7 +38,7 @@ app.use(router);
 
 // if deployed use the deployed db, otherwise use the local mongodb
 
-var db = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+var db = process.env.MONGODB_URI || "mongodb://user:password1@ds333098.mlab.com:33098/heroku_xclq66pf";
 
  mongoose.connect(db, function(error) {
  

@@ -141,7 +141,7 @@ function handleArticleDelete() {
                 "<hr />",
                 "<ul class='list-group note-container mb-3'>",
                 "</ul>",
-                "<textarea placeholder='New Note'  rows='10' cols='60'></textarea>",
+                "<textarea placeholder=' New Note' rows='10' cols='60''></textarea>",
                 "<button class='btn btn-success save ml-auto mt-2'>Save Note</button>",
                 "</div>"
             ].join("");
