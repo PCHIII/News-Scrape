@@ -35,22 +35,24 @@ $(document).ready(function() {
 
         var card = $(
         [
-        "<div class = 'card bg-secondary text-white shadow mb-4'>",
-        "<div class='card-header'>",
+        "<div class = 'card  shadow mb-4'>",
+        "<div class='card-header bg-light'>",
         "<h4>",
         article.headline,
         
         "</h4>",
         "</div>",
-        "<div class='card-body bg-light text-dark'>",
+        "<div class='card-body bg-white text-dark'>",
+        "<h5>",
         article.summary,
+        "</h5>",
         "</br>",
         article.url,
         "</div>",
-        "<div class ='card-text bg-light text-white pb-2 pl-2'>",
-        "<a class='btn btn-danger delete mr-2 border-dark'>",
+        "<div class ='card-text bg-white pb-2 pl-2'>",
+        "<a class='btn btn-danger delete mr-2 text-white'>",
         "Delete Article</a>",
-        "<a class='btn btn-info notes border-dark'>Add Notes</a>",
+        "<a class='btn btn-info notes text-white'>Add Notes</a>",
         "</div>",
 
         "</div>"
@@ -66,11 +68,11 @@ $(document).ready(function() {
         var emptyAlert = $(
         [
         "<div class='alert alert-warning text-center'>",
-        "<h4>No saved articles currently available.</h4>",
+        "<h4>No saved Articles currently available.</h4>",
         "</div>",
         "<div class='card'>",
         "<div class='card-header text-center text-danger'>",
-        "<h3> Do you want to check available articles?</h3>",
+        "<h3> Do you want to check available Articles?</h3>",
         "</div>",
         "<div class='card-body text-center'>",
         

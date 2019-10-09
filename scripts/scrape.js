@@ -23,6 +23,7 @@ var scrape = function(cb) {
                     headline: headNeat,
                     summary: sumNeat,
                     url: url
+                    
                 };
 
                 // console.log(dataToAdd)

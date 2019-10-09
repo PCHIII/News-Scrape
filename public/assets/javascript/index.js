@@ -32,20 +32,22 @@ $(document).ready(function() {
 
         var card = $(
         [
-        "<div class = 'card bg-secondary text-white shadow mb-4'>",
-        "<div class='card-header'>",
+        "<div class = 'card shadow mb-4'>",
+        "<div class='card-header bg-light'>",
         "<h4>",
         article.headline,
         
         "</h4>",
         "</div>",
-        "<div class='card-body bg-light text-dark'>",
+        "<div class='card-body bg-white text-dark'>",
+        "<h5>",
         article.summary,
+        "</h5>",
          "</br>",
         article.url,
        "</div>",
-        "<div class ='card-text bg-light pb-2 pl-2'>",
-        "<a class='btn btn-info border-dark save'>",
+        "<div class ='card-text bg-white pb-2 pl-2'>",
+        "<a class='btn btn-info text-white save'>",
         "Save Article",
         "</a>",
        
@@ -102,6 +104,10 @@ $(document).ready(function() {
         .then(function(data) {
             initPage();
             bootbox.alert("<h3 class='text-center m-top-80'>" + data.message + "<h3>");
+            // bootbox.alert({
+            //     message: data.message,
+            //     className: 'rubberBand animated'
+            // });
         });
     }
 });
