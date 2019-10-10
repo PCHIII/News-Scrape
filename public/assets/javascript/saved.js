@@ -40,8 +40,10 @@ $(document).ready(function() {
         "<h5>",
         article.summary,
         "</h5>",
-        "</br>",
+        // "</br>",
+        "<a href>",
         article.url,
+        "</a>",
         "</div>",
         "<div class ='card-text bg-white pb-2 pl-2'>",
         "<a class='btn btn-danger delete mr-2 text-white'>",
@@ -98,6 +100,7 @@ $(document).ready(function() {
                     "</li>"
                 ].join(""));
                 currentNote.children("button").data("_id", data.notes[i]._id);
+
                 notesToRender.push(currentNote);
             }
         }

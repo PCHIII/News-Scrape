@@ -12,7 +12,7 @@ var scrape = function(cb) {
   
       $(".assetWrapper").each(function(i, element) {
         var head = $(this).find("h2").text().trim();
-        var url = $(this).find("a").attr("href");
+        var url =  $(this).find("a").attr("href");
         var sum = $(this).find("p").text().trim();
         
             if (head && sum) {
@@ -22,7 +22,7 @@ var scrape = function(cb) {
                 var dataToAdd = {
                     headline: headNeat,
                     summary: sumNeat,
-                    url: url
+                    url: "https://www.nytimes.com" + url
                     
                 };
 

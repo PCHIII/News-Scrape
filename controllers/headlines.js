@@ -18,7 +18,7 @@ module.exports = {
             }
 
             // mongo function to insert articles
-            Headline.collection.insertMany(articles, { ordered:false }, function(err, docs){
+            Headline.collection.insertMany(articles, {ordered:false}, function(err, docs){
                 cb(err,docs);
             });
 
