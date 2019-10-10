@@ -41,12 +41,12 @@ $(document).ready(function () {
                 "<h5>",
                 article.summary,
                 "</h5>",
-                //  "</br>",
-                "<a href>",
+                `<a class='linkTag' href='${article.link}'>`,
                 article.link,
+
                 "</a>",
                 "</div>",
-                "<div class ='card-text bg-white pb-2 pl-2'>",
+                "<div class ='card-text bg-white pb-3 pl-3'>",
                 "<a class='btn btn-light border save'>",
                 "Save Article",
                 "</a>",
@@ -54,6 +54,9 @@ $(document).ready(function () {
                 "</div>",
                 "</div>"
             ].join(""));
+
+            
+console.log(article.link)
 
         card.data("_id", article._id);
         return card;
