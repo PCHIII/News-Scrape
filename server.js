@@ -40,17 +40,15 @@ app.use(router);
 
 var db = process.env.MONGODB_URI || "mongodb://user:password1@ds333098.mlab.com:33098/heroku_xclq66pf";
 
- mongoose.connect(db, function(error) {
- 
-   if (error) {
+mongoose.connect(db, function (error) {
+
+  if (error) {
     console.log(error);
- }
- 
-  else {
+  } else {
     console.log("mongoose connection is successful");
   }
- });
+});
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log("Listening on port:" + PORT);
 });

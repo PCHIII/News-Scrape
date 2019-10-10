@@ -10,7 +10,15 @@ html {
     background-size: cover;  
 } */
 
-.navbar-brand, .nav-item, h4, h5, .btn, a, li, textarea, h6 {
+.navbar-brand,
+.nav-item,
+h4,
+h5,
+.btn,
+a,
+li,
+textarea,
+h6 {
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -18,19 +26,24 @@ html {
     font-size: 20px;
 }
 
- .jumbotron {
+.jumbotron {
     margin-top: 40px;
     height: 100px;
     z-index: auto;
-}  
+}
 
 h1 {
-    font-family: 'Special Elite', cursive; 
+    font-family: 'Special Elite', cursive;
 }
 
-h4, .navbar-brand, .nav-item, .btn, h6 {
+h4,
+.navbar-brand,
+.nav-item,
+.btn,
+h6 {
     font-weight: bolder;
 }
+
 /* .caption {
     height: 150px;;
 } */

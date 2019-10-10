@@ -10,7 +10,7 @@ var headlineSchema = new Schema({
     },
     summary: {
         type: String,
-        required: true 
+        required: true
     },
 
     link: {
@@ -26,6 +26,6 @@ var headlineSchema = new Schema({
 
 });
 
-var Headline = mongoose.model("Headline" , headlineSchema);
+var Headline = mongoose.model("Headline", headlineSchema);
 
 module.exports = Headline;
