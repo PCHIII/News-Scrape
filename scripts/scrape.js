@@ -22,7 +22,8 @@ var scrape = function(cb) {
                 var dataToAdd = {
                     headline: headNeat,
                     summary: sumNeat,
-                    url: "https://www.nytimes.com" + url
+                    link: "https://www.nytimes.com" + url,
+                    
                     
                 };
 

@@ -44,8 +44,9 @@ $(document).ready(function() {
         article.summary,
         "</h5>",
         //  "</br>",
-        "<a href>",
-        article.url,
+        "<a href= >",
+        article.link,
+        
         "</a>",
        "</div>",
         "<div class ='card-text bg-white pb-2 pl-2'>",

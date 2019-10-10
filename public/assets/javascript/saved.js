@@ -41,8 +41,8 @@ $(document).ready(function() {
         article.summary,
         "</h5>",
         // "</br>",
-        "<a href>",
-        article.url,
+        "<a href= >",
+        article.link,
         "</a>",
         "</div>",
         "<div class ='card-text bg-white pb-2 pl-2'>",
@@ -85,8 +85,7 @@ $(document).ready(function() {
         var notesToRender = [];
         var currentNote;
         if (!data.notes.length) {
-            currentNote = ["<li class='list-group-item'>",
-                "No notes added for this article currently.", "</li>"
+            currentNote = ["<li class='list-group-item'>","No notes added for this article.", "</li>"
             ].join("");
             notesToRender.push(currentNote);
         }
@@ -124,13 +123,13 @@ function handleArticleDelete() {
         $.get("/api/notes/" + currentArticle._id).then(function(data) {
             var modalText =  [
                 "<div class='card border-0 pl-3'>",
-                "<h5>Notes for Article: ",
+                "<h6>Article #: ",
                 currentArticle._id,
-                "</h5>",
+                "</h6>",
                 "<hr />",
                 "<ul class='list-group  mb-3 note-container'>",
                 "</ul>",
-                "<textarea placeholder='New Note' rows='10' cols='60''></textarea>",
+                "<textarea placeholder='  New Note' rows='10' cols='60''></textarea>",
                 "<button class='btn btn-success  ml-auto mt-2 save'>Save Note</button>",
                 "</div>"
             ].join("");
