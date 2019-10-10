@@ -109,8 +109,9 @@ $(document).ready(function () {
                 currentNote = $(
                     [
                         "<li class='list-group-item note'>",
+                        "<button class='btn btn-light border note-delete mr-3'>x</button>",
                         data.notes[i].noteText,
-                        "<button class='btn btn-light border note-delete'>x</button>",
+                        
                         "</li>"
                     ].join(""));
                 // Store note id on the delete button for easy access when trying to delete
