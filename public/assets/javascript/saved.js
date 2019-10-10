@@ -46,9 +46,9 @@ $(document).ready(function() {
         "</a>",
         "</div>",
         "<div class ='card-text bg-white pb-2 pl-2'>",
-        "<a class='btn btn-danger delete mr-2 text-white'>",
+        "<a class='btn btn-light border mr-2 delete'>",
         "Delete Article</a>",
-        "<a class='btn btn-info notes text-white'>Article Notes</a>",
+        "<a class='btn btn-light border notes'>Article Notes</a>",
         "</div>",
 
         "</div>"
@@ -95,7 +95,7 @@ $(document).ready(function() {
                     [
                     "<li class='list-group-item note'>",
                     data.notes[i].noteText,
-                    "<button class='btn btn-danger note-delete'>x</button>",
+                    "<button class='btn btn-light border note-delete'>x</button>",
                     "</li>"
                 ].join(""));
                 currentNote.children("button").data("_id", data.notes[i]._id);
@@ -130,7 +130,7 @@ function handleArticleDelete() {
                 "<ul class='list-group  mb-3 note-container'>",
                 "</ul>",
                 "<textarea placeholder='  New Note' rows='10' cols='60''></textarea>",
-                "<button class='btn btn-success  ml-auto mt-2 save'>Save Note</button>",
+                "<button class='btn btn-light border  ml-auto mt-2 save'>Save Note</button>",
                 "</div>"
             ].join("");
             bootbox.dialog({

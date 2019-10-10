@@ -50,7 +50,7 @@ $(document).ready(function() {
         "</a>",
        "</div>",
         "<div class ='card-text bg-white pb-2 pl-2'>",
-        "<a class='btn btn-info text-white save'>",
+        "<a class='btn btn-light border save'>",
         "Save Article",
         "</a>",
        
