@@ -3,7 +3,7 @@
 
 
 
-## Deployed on Heroku <a href="(https://news-scraperdb.herokuapp.com/" rel="nofollow"> here.</a>
+## Deployed on Heroku <a href="(https://news-scraperdb.herokuapp.com/"> here.</a>
 <br>
 
 
