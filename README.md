@@ -1,19 +1,16 @@
 # __News Scraper__
 
+## Deployed on Heroku <a href="https://news-scraperdb.herokuapp.com//" rel="nofollow"> here.</a>
 
 
 
-## Deployed on Heroku <a href="(https://news-scraperdb.herokuapp.com/"> here.</a>
-<br>
-
-
-## __Overview:__ 
+## Overview:
 An app that scrapes articles from the New York Times website and lets users save articles and leave comments on the latest news.
 
 <br>
 
 
-## __How It Works:__
+## How It Works:
 
 - Scrape Articles by clicking the "Scrape Articles" button.
 
@@ -31,7 +28,7 @@ An app that scrapes articles from the New York Times website and lets users save
 <br>
 
 
-## __Home Page showing Scraped Articles:__
+## Home Page showing Scraped Articles:
 
 ![Website](/public/assets/images/Capture.JPG)
 
@@ -39,13 +36,13 @@ An app that scrapes articles from the New York Times website and lets users save
 
 <br>
 
-## __Saved Article Page gives option to Delete or Add/View Notes:__
+## Saved Article Page gives option to Delete or Add/View Notes:
 ![Website](/public/assets/images/Capture2.JPG)
 
 
 <br>
 
-## __Pop-up Modal to View , Add or Delete Note:__
+## Pop-up Modal to View , Add or Delete Note:
 
 ![Website](/public/assets/images/Capture3.JPG)
 
@@ -53,7 +50,7 @@ An app that scrapes articles from the New York Times website and lets users save
 <br>
 
 
-## __Technologies Used:__
+## Technologies Used:
 - Node.js
 - Express.js
 - Handlebars.js
