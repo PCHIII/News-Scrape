@@ -146,7 +146,8 @@ $(document).ready(function () {
             // Adding the formatted HTML to the note modal
             bootbox.dialog({
                 message: modalText,
-                closeButton: true
+                closeButton: true,
+                centerVertical: true
             });
             var noteData = {
                 _id: currentArticle._id,
