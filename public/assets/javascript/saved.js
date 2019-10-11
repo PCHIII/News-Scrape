@@ -150,8 +150,8 @@ $(document).ready(function () {
                 message: modalText,
                 closeButton: true,
                 centerVertical: true,
-                size: 'large'
-                                             
+                size: 'large',
+                className: 'rubberBand animated'                             
             });
             var noteData = {
                 _id: currentArticle._id,

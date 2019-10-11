@@ -53,7 +53,8 @@ An app that scrapes articles from the New York Times website and lets users save
 - MongoDB
 - Mongoose
 - Bootstrap
-- BootBox
+- Animate CSS
+- BootBox JS
 - Google Fonts
 - npm packages:
     - axios
