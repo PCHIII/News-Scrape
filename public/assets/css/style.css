@@ -45,7 +45,10 @@ h5 {
     font-weight: bolder;
 }
 
-
+.bootbox-alert div div div button.btn-primary {
+         background-color: rgba(12, 2, 2, 0.637);
+     }
+ 
 
 /* .caption {
     height: 150px;;
