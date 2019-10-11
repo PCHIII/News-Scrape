@@ -40,9 +40,12 @@ h4,
 .navbar-brand,
 .nav-item,
 .btn,
-h6 {
+h6,
+h5 {
     font-weight: bolder;
 }
+
+
 
 /* .caption {
     height: 150px;;

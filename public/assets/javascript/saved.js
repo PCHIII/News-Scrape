@@ -131,23 +131,27 @@ $(document).ready(function () {
         // Grab any notes with this headline/article id
         $.get("/api/notes/" + currentArticle._id).then(function (data) {
             // Constructing initial HTML to add to the notes modal
+            
             var modalText = [
-                "<div class='card border-0 pl-3'>",
-                "<h6>Article #: ",
+                "<div class='card border-0 pt-3 pl-3'>",
+                "<h5>Article #: ",
                 currentArticle._id,
-                "</h6>",
+                "</h5>",
                 "<hr />",
                 "<ul class='list-group  mb-3 note-container'>",
                 "</ul>",
-                "<textarea placeholder='  New Note' rows='10' cols='60''></textarea>",
+                "<textarea placeholder='  Add New Note' rows='10' cols='60''></textarea>",
                 "<button class='btn btn-light border  ml-auto mt-2 save'>Save Note</button>",
                 "</div>"
             ].join("");
+
             // Adding the formatted HTML to the note modal
             bootbox.dialog({
                 message: modalText,
                 closeButton: true,
-                centerVertical: true
+                centerVertical: true,
+                size: 'large'
+                                             
             });
             var noteData = {
                 _id: currentArticle._id,
