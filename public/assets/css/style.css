@@ -1,14 +1,16 @@
 html {
     position: relative;
     min-height: 100%;
+    
 }
 
-/* body {
-    
-    background-color: rgb(212, 212, 212); 
-    background-repeat: no-repeat; 
+ body {
+    background-image: url("../images/type.jpg"); background-repeat: no-repeat;
     background-size: cover;  
-} */
+    /* background-repeat: no-repeat; */
+    height: 100%; 
+    
+}  
 
 .navbar-brand,
 .nav-item,
@@ -27,13 +29,14 @@ h6 {
 }
 
 .jumbotron {
-    margin-top: 40px;
+    margin-top: 70px;
     height: 100px;
     z-index: auto;
 }
 
 h1 {
     font-family: 'Special Elite', cursive;
+   
 }
 
 h4,
@@ -49,6 +52,9 @@ h5 {
          background-color: rgba(12, 2, 2, 0.637);
      }
  
+a {
+    color: gray;
+}
 
 /* .caption {
     height: 150px;;
