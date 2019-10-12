@@ -4,13 +4,13 @@ html {
     
 }
 
- body {
+ /* body {
     background-image: url("../images/type.jpg"); background-repeat: no-repeat;
     background-size: cover;  
-    /* background-repeat: no-repeat; */
+    background-repeat: no-repeat;
     height: 100%; 
     
-}  
+}   */
 
 .navbar-brand,
 .nav-item,
